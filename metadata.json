@@ -1,0 +1,29 @@
+{
+  "name": "Copy of HINA AI | Ultimate Partner",
+  "short_name": "Hina",
+  "description": "Natural AI partner with background listening, calling, and location tracking.",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2103/2103633.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "permissions": [
+    "background-sync",
+    "audio-capture",
+    "video-capture",
+    "display-capture"
+  ]
+}

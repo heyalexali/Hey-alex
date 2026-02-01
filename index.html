@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="HINA AI">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="metadata.json">
+    
+    <!-- App Icons for iOS -->
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2103/2103633.png">
+    
+    <title>HINA | Mobile Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@200;400;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #000000;
+            --accent: #00f2ff;
+            --surface: rgba(255, 255, 255, 0.04);
+            --safe-top: env(safe-area-inset-top);
+            --safe-bottom: env(safe-area-inset-bottom);
+        }
+        body {
+            background-color: var(--bg-deep);
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow: hidden;
+            margin: 0;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            /* Prevent bouncing scroll on iOS */
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+        .font-outfit { font-family: 'Outfit', sans-serif; }
+        
+        .glass-card {
+            background: var(--surface);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Fluid Animation for Hina's Core */
+        @keyframes liquid-pulse {
+            0% { transform: scale(1); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+            33% { transform: scale(1.1); border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+            66% { transform: scale(1.05); border-radius: 30% 60% 70% 40% / 50% 60% 30% 40%; }
+            100% { transform: scale(1); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+        }
+        .liquid-core {
+            animation: liquid-pulse 6s ease-in-out infinite;
+        }
+
+        /* Scrollbar Hidden */
+        ::-webkit-scrollbar { display: none; }
+        
+        .safe-pb { padding-bottom: var(--safe-bottom); }
+        .safe-pt { padding-top: var(--safe-top); }
+
+        /* Dynamic Glow */
+        .glow-cyan {
+            box-shadow: 0 0 50px rgba(0, 242, 255, 0.15);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "firebase/app": "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js",
+    "firebase/": "https://esm.sh/firebase@^12.8.0/"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
